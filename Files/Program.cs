@@ -66,7 +66,6 @@ namespace Files
             }
             catch (Exception e)
             {
-                Console.WriteLine("An error occurred trying to load directory: " + p);
                 Console.WriteLine(e.Message);
             }
 
@@ -85,7 +84,7 @@ namespace Files
             {
                 //Console.WriteLine("Checking: " + f.FullName);
                 if (f.Length > threshold && !done.Contains(f.FullName))
-                    Console.WriteLine("{0} has a filesize of {1} GB ({3} bytes) ({2})", f.Name, GetGB(f.Length), f.FullName, f.Length);
+                    Console.Write("\n{0} has a filesize of {1} GB ({3} bytes) ({2})", f.Name, GetGB(f.Length), f.FullName, f.Length);
                 
                 size += f.Length;
                 done.Add(f.FullName);
